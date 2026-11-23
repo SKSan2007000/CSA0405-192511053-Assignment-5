@@ -1,0 +1,5 @@
+deployment,startup_ms,memory_mib,disk_or_image_mib,requests_per_second,status
+bare_metal_local_process,MEASURED,MEASURED,not_applicable,MEASURED,executed_in_current_environment
+virtual_machine,not_measured,not_measured,not_measured,not_measured,requires_guest_VM/hypervisor
+docker_container,not_measured,not_measured,not_measured,not_measured,Docker CLI/daemon unavailable
+kubernetes_3_replicas,not_measured,not_measured,not_measured,not_measured,kubectl/cluster unavailable

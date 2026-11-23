@@ -1,0 +1,2 @@
+Root filesystem usage: 1% (alert threshold: 80%)
+OK: disk usage below threshold

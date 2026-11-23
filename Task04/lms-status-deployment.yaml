@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lms-status
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lms-status
+  template:
+    metadata:
+      labels:
+        app: lms-status
+    spec:
+      containers:
+      - name: lms-status
+        image: python:3.12-slim
+        command: ["python", "-c", "from http.server import BaseHTTPRequestHandler,HTTPServer; H=type('H',(BaseHTTPRequestHandler,),{'do_GET':lambda s:(s.send_response(200),s.end_headers(),s.wfile.write(b'OK')),'log_message':lambda *a:None}); HTTPServer(('0.0.0.0',8001),H).serve_forever()"]
+        ports:
+        - containerPort: 8001
+        resources:
+          requests: {cpu: 100m, memory: 64Mi}
+          limits: {cpu: 250m, memory: 128Mi}

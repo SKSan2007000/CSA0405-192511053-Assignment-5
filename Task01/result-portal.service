@@ -1,0 +1,18 @@
+[Unit]
+Description=University Result Portal sample service
+After=network.target
+
+[Service]
+Type=simple
+User=portal
+Group=portal
+WorkingDirectory=/opt/result-portal
+Environment=PORT=8000
+ExecStart=/usr/bin/python3 /opt/result-portal/app.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

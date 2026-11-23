@@ -1,0 +1,42 @@
+$ uname -a
+Linux f1d057317861 6.18.57 #1 SMP Tue Oct 20 21:56:04 UTC 2026 x86_64 GNU/Linux
+
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           5.8Gi       1.1Gi       4.7Gi        12Ki        96Mi       4.7Gi
+Swap:             0B          0B          0B
+
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G   30M   30G   1% /
+tmpfs            64M     0   64M   0% /dev
+shm             3.0G     0  3.0G   0% /dev/shm
+
+$ ps
+    PID COMMAND         %CPU %MEM
+    344 artifact_tool_r  6.3  4.3
+    328 python           3.0  2.8
+    291 python           1.5  1.2
+    298 python           0.6  0.6
+      1 supervisord      0.4  0.4
+      6 log_forwarder    0.0  0.0
+     52 bash             0.0  0.0
+     75 sleep            0.0  0.0
+    217 log_forwarder    0.0  0.0
+    234 log_forwarder    0.0  0.0
+    241 bash             0.0  0.0
+    246 tini             0.0  0.0
+    276 bash             0.0  0.0
+    282 start-server.sh  0.0  0.0
+    941 ps               0.0  0.0
+
+$ ss
+Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  
+tcp     LISTEN   0        0              127.0.0.1:37209          0.0.0.0:*     
+tcp     LISTEN   0        0              127.0.0.1:57589          0.0.0.0:*     
+tcp     LISTEN   0        0              127.0.0.1:45819          0.0.0.0:*     
+tcp     LISTEN   0        0                0.0.0.0:8080           0.0.0.0:*     
+tcp     LISTEN   0        0              127.0.0.1:47147          0.0.0.0:*     
+tcp     LISTEN   0        0              127.0.0.1:55509          0.0.0.0:*     
+tcp     LISTEN   0        0              127.0.0.1:40125          0.0.0.0:*     
+tcp     LISTEN   0        0                0.0.0.0:1384           0.0.0.0:*     

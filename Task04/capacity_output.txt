@@ -1,0 +1,7 @@
+Students: 150000
+Average arrival rate: 20.83 logins/s
+Peak design rate (10x): 208.33 logins/s
+Measured local synthetic endpoint throughput: 3367.16 req/s
+Planning capacity at 70% utilisation: 2357.01 req/s per instance
+Arithmetic minimum instances using this synthetic benchmark: 1
+CAUTION: not a production sizing result; login flows, database, TLS, cache misses and user think-time were not modelled.
